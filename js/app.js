@@ -295,8 +295,24 @@ gameApp.controller('GameCtrl', ['$scope', function($scope, $timeout,  shared) {
         },
         addGameSummary  : function() {
             this.gameTitles.unshift("Summary");
-            var gameSummary = [this.getGameNumber() + " games played", "Player X won " + this.getPlayerXWins() + " games", "Player O won " + this.getPlayerOWins() + " games", (this.getGameNumber()-this.getPlayerOWins()-this.getPlayerXWins()) + " games ended in a draw", "Simulation took " + this.executionTime + " milliseconds to run"];
-            console.log(gameSummary);
+            var gameSummary = [this.getGameNumber() + " games played"];
+            if(this.getPlayerXWins() == 1) {
+                gameSummary.push("Player X won " + this.getPlayerXWins() + " game");
+            } else {
+                gameSummary.push("Player X won " + this.getPlayerXWins() + " games");
+            }
+            if(this.getPlayerOWins() == 1) {
+                gameSummary.push("Player O won " + this.getPlayerOWins() + " game");
+            } else {
+                gameSummary.push("Player O won " + this.getPlayerOWins() + " games");
+            }
+            if(this.getGameNumber()-this.getPlayerOWins()-this.getPlayerXWins() == 1) {
+                gameSummary.push(this.getGameNumber()-this.getPlayerOWins()-this.getPlayerXWins() + " game ended in a draw");
+            } else {
+                gameSummary.push(this.getGameNumber()-this.getPlayerOWins()-this.getPlayerXWins() + " games ended in a draw");
+            }
+            gameSummary.push("Simulation took " + this.executionTime + " milliseconds to run");
+
             this.gameBoards.unshift(gameSummary);
             this.gameLogs.unshift("");
             this.gameWinners.unshift("");
@@ -376,7 +392,7 @@ gameApp.controller('GameCtrl', ['$scope', function($scope, $timeout,  shared) {
         }
         $scope.stats.endTime();
         $scope.stats.addGameSummary();
-        $scope.stats.displayIndex = 1;
+        $scope.stats.displayIndex = 0;
 
     };
     $scope.displayGame      = function(title) {
