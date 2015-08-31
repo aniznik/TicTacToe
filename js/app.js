@@ -376,14 +376,14 @@ gameApp.controller('GameCtrl', ['$scope', function($scope, $timeout,  shared) {
     $scope.setupGame        = function() {
         $scope.stats.addGameNumber();
         $scope.game.setupGame($scope.stats.getGameNumber());
-    }
+    };
     $scope.simulateGame     = function() {
         $scope.setupGame();
         while($scope.game.winner == false && $scope.game.draw == false && $scope.game.getMoveNumber() < 10) {
             $scope.game.makeMove();
         }
         $scope.stats.addGameStats($scope.game.getGameTitle(), $scope.game.getGameBoard(), $scope.game.getGameLog(), $scope.game.getGameWinner());
-    }
+    };
     $scope.startGame        = function() {
         $scope.stats.startTime();
         $("#button").css("display", "none");
