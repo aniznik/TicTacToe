@@ -1,0 +1,212 @@
+* {
+    padding:0;
+    margin:0;
+}
+html, body {
+    background:#e0e0e0;
+    font-family: 'Lato', helvetica, sans-serif;
+    color:#333;
+}
+
+/* Vertical Scroll */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background: rgba(0,0,0,0.3);
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(0,0,0,0.15);
+}
+
+/* Body */
+header {
+    position:relative;
+    top:0;
+    width:100%;
+    height:60px;
+    margin:0;
+    padding:0;
+    background:#3C948B;
+    color:#FFF;
+    text-shadow:1px 1px #000;
+    text-align:center;
+    font-weight:bold;
+    font-size:32px;
+    line-height:60px;
+}
+#wrapper {
+    width:100%;
+    max-width:900px;
+    margin:50px auto;
+    overflow:hidden;
+}
+h1 {
+    font-size:32px;
+    text-align: center;
+    margin-bottom:15px;
+}
+h2 {
+    font-size:18px;
+    text-align:center;
+}
+
+/* Game Menu */
+#menu {
+    display:inline-block;
+    float:left;
+    margin:0;
+    padding:0;
+    height:450px;
+    width:25%;
+    max-width:225px;
+    box-sizing:border-box;
+    overflow-y:auto;
+    color:#333;
+    font-size:14px;
+    vertical-align: top;
+}
+.menu-content {
+    height:450px;
+    background:#FFF;
+    box-sizing:border-box;
+    border:1px solid #BBB;
+}
+#menu ul {
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+#menu ul li {
+    list-style:none;
+    padding:10px 25px;
+}
+#menu ul li:hover {
+    background:#EFEFEF;
+    text-decoration:underline;
+    cursor:pointer;
+}
+#menu ul li.base {
+    color:inherit;
+}
+#menu ul li.selected {
+    background:#E0E0E0;
+    color:#3c948b;
+}
+
+/* Game Board */
+#board {
+    display:inline-block;
+    position:relative;
+    width:50%;
+    max-width:450px;
+    height:450px;
+    margin:0 auto;
+    background:#FFF;
+    box-sizing:border-box;
+    overflow:hidden;
+}
+.board-piece {
+    margin:0;
+    padding:0;
+    width:150px;
+    height:150px;
+    box-sizing:border-box;
+    font-size:52px;
+    text-align:center;
+    line-height:150px;
+    display:inline-block;
+    overflow:hidden;
+    border:1px solid #BBB;
+    float:left;
+}
+.summary {
+    position:absolute;
+    background:#FFF;
+    width:100%;
+    height:100%;
+    border:1px solid #BBB;
+    font-size:22px;
+    box-sizing:border-box;
+    padding:25px;
+    line-height:36px;
+}
+.win {
+    color:#FFF;
+    background:#3c948b;
+}
+.lose {
+    background:#FFF;
+    color:#999;
+}
+
+/* Game Log */
+#log {
+    display:inline-block;
+    float:right;
+    height:450px;
+    box-sizing:border-box;
+    width:25%;
+    max-width:275px;
+    vertical-align:top;
+    overflow:hidden;
+    font-size:14px;
+}
+.log-content {
+    border:1px solid #BBB;
+    height:450px;
+    box-sizing:border-box;
+    padding:10px 15px;
+    background:#FFF;
+}
+
+/* Start Button */
+#button {
+    width:250px;
+    height:75px;
+    color:#FFF;
+    background:#3C948B;
+    border:3px solid #3C948B;
+    font-size:28px;
+    font-weight:bold;
+    line-height:75px;
+    text-align:center;
+    cursor:pointer;
+    box-sizing:border-box;
+}
+#button.start-game-button {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    -webkit-transform:translate(-50%,-50%);
+    -ms-transform:translate(-50%,-50%);
+    -moz-transform:translate(-50%,-50%);
+    z-index:2;
+}
+#button.start-game-button:hover {
+    background:#FFF;
+    color:#3C948B;
+}
+
+/* Overview */
+#overview {
+    width:100%;
+    padding:50px 0 0;
+    text-align:center;
+}
+#button.new-game-button {
+    margin:15px auto;
+}
+#button.new-game-button:hover {
+    background:#FFF;
+    color:#3C948B;
+}
